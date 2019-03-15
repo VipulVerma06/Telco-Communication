@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS telco;
+
+CREATE TABLE telco(
+        customerID              string,
+        gender                  string,
+        SeniorCitizen           int,
+        Partner                 string,
+        Dependents              string,
+        tenure                  int,
+        PhoneService            string,
+        MultipleLines           string,
+        InternetService         string,
+        OnlineSecurity          string,
+        OnlineBackup            string,
+        DeviceProtection        string,
+        TechSupport             string,
+        StreamingTV             string,
+        StreamingMovies         string,
+        Contract                string,
+        PaperlessBilling        string,
+        PaymentMethod           string,
+        MonthlyCharges          float,
+        TotalCharges            float,
+        Churn                   string
+                        )
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ',';
+
+LOAD DATA LOCAL INPATH 'TelcoCustChurn.csv' OVERWRITE INTO TABLE telco;
